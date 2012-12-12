@@ -1,0 +1,86 @@
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+*.off
+*.old
+.DS_Store
+*.swo
+*.swp
+*.swn
+*.swm
+
+# logs
+derby.log
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+
+# building
+target
+null
+tmp*
+dist
+test-output
+
+# sbt
+target
+lib_managed
+src_managed
+project/boot
+project/plugins/project/build.properties
+
+# db
+lift_proto*
+
+# other scm
+.svn
+.CVS
+.hg*
+
+# switch to regexp syntax.
+#  syntax: regexp
+#  ^\.pc/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Pax Runner (for easy OSGi launching)
+runner
+
+# Just for now.
+src/test
+
+.sass-cache
+
+# Local prop files.
+*.local.props
+
+# Ensime.
+.ensime
+
+# Randomly dropped. Maybe by ensime/ensime-vim?
+1
+
+# Glassfish stuff
+glassfish*
+
+# Redirecting stuff for local debugging
+redirect
+
+# Version drops from resource uploads.
+src/main/resources/bundles/*-versions
+
+# Stylesheets
+src/main/webapp/stylesheets/*.css
+
+# Supplemental libs
+/lib/*
