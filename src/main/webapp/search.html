@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>Home</title>
+  </head>
+  <body class="lift:content_id=search-results">
+
+    <section id="search-results" class="span9" data-lift="surround?with=default;at=content">
+      <h2>Search Results!</h2>
+
+      <button data-lift="Search.runIt" class="btn">Run dat search!</button>
+
+      <ul data-bind="foreach: searchResults">
+        <li class="connection">
+          <h3 data-bind="text: name">Duck, Inc</h3>
+        </li>
+
+        <li class="connection clearable">
+          <h3>Duck, Inc</h3>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
+
