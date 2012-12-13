@@ -5,6 +5,10 @@
   kmo.showResults = function(results) {
     results.forEach(function(object) {
       object.logoURL = "/images/logos/" + object.name.split(/\W/)[0].toLowerCase() + ".jpg";
+
+      object.actions.forEach(function(action) {
+        action.run = function() { alert(action.response) }
+      })
     });
 
     searchResults(results);

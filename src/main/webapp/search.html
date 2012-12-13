@@ -20,6 +20,15 @@
           </a>
 
           <h3 data-bind="text: name">Duck, Inc</h3>
+
+          <ul class="actions" data-bind="foreach: actions">
+            <li class="clearable">
+              <button class="btn" data-bind="click: run, text: name">Walk</button>
+            </li>
+            <li>
+              <button class="btn" data-bind="click: run, text: name">Quack</button>
+            </li>
+          </ul>
         </li>
 
         <li class="connection clearable">
@@ -28,6 +37,15 @@
           </a>
 
           <h3>Duck, Inc</h3>
+
+          <ul class="actions" data-bind="foreach: actions">
+            <li class="clearable">
+              <button class="btn" data-bind="click: run, text: name">Walk</button>
+            </li>
+            <li>
+              <button class="btn" data-bind="click: run, text: name">Quack</button>
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
