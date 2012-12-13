@@ -3,6 +3,10 @@
 
   window.kmo = {}
   kmo.showResults = function(results) {
+    results.forEach(function(object) {
+      object.logoURL = "/images/logos/" + object.name.split(/\W/)[0].toLowerCase() + ".jpg";
+    });
+
     searchResults(results);
   }
 

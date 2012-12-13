@@ -13,10 +13,20 @@
 
       <ul data-bind="foreach: searchResults">
         <li class="connection">
+          <a href="/companies/15" data-bind="attr: { href: '/companies/' + id }">
+            <img src="/images/logos/duck.png" alt="Duck, Inc logo"
+                 data-bind="attr: { src: logoURL, alt: name + ' Logo' }"
+                 class="logo">
+          </a>
+
           <h3 data-bind="text: name">Duck, Inc</h3>
         </li>
 
         <li class="connection clearable">
+          <a href="/companies/15">
+            <img src="/images/logos/duck.png" alt="Duck, Inc logo" class="logo">
+          </a>
+
           <h3>Duck, Inc</h3>
         </li>
       </ul>
