@@ -21,6 +21,15 @@
 
           <h3 data-bind="text: name">Duck, Inc</h3>
 
+          <ul class="connections">
+            <li data-bind="if: connected">
+              <button class="btn btn-danger" data-bind="click: disconnect">Disconnect</button>
+            </li>
+            <li data-bind="ifnot: connected">
+              <button class="btn btn-success" data-bind="click: connect">Connect</button>
+            </li>
+          </ul>
+
           <ul class="actions" data-bind="foreach: actions">
             <li class="clearable">
               <button class="btn" data-bind="click: run, text: name">Walk</button>
@@ -37,6 +46,15 @@
           </a>
 
           <h3>Duck, Inc</h3>
+
+          <ul class="connections">
+            <li>
+              <button class="btn btn-danger" data-bind="click: disconnect">Disconnect</button>
+            </li>
+            <li data-bind="ifnot: connected">
+              <button class="btn btn-success" data-bind="click: connect">Connect</button>
+            </li>
+          </ul>
 
           <ul class="actions" data-bind="foreach: actions">
             <li class="clearable">

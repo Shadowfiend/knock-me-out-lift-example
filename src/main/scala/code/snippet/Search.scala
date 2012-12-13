@@ -9,24 +9,24 @@ import net.liftweb.http.js._
 import net.liftweb.util.Helpers._
 
 case class Action(name: String, response: String)
-case class Company(id: Long, name: String, actions: List[Action])
+case class Company(id: Long, name: String, connected: Boolean, actions: List[Action])
 
 class Search {
   implicit val formats = DefaultFormats
 
-  val duck = Company(1, "Duck, Inc",
+  val duck = Company(1, "Duck, Inc", true,
                      Action("Quack", "quack quack") :: Action("Walk", "walkity walk") :: Nil)
-  val cat = Company(2, "Cat, Inc",
+  val cat = Company(2, "Cat, Inc", true,
                      Action("Meow", "meowwwwwww") :: Action("Walk", "prowwwlll") :: Nil)
-  val dog = Company(3, "Dog, Inc",
+  val dog = Company(3, "Dog, Inc", true,
                      Action("Bark", "bark BARK") :: Action("Walk", "*lick face*") :: Nil)
-  val cow = Company(4, "Cow, Inc",
+  val cow = Company(4, "Cow, Inc", true,
                      Action("Moo", "mooooooooo") :: Action("Walk", "leisurely stroll") :: Nil)
-  val sheep = Company(5, "Sheep, Inc",
+  val sheep = Company(5, "Sheep, Inc", false,
                      Action("Baa", "baaa baaaaaaaa") :: Action("Walk", "Need sheepdog") :: Nil)
-  val horse = Company(6, "Horse, Inc",
+  val horse = Company(6, "Horse, Inc", false,
                      Action("Neigh", "neighhhhh") :: Action("Walk", "GALLOOPPP") :: Nil)
-  val chicken = Company(7, "Chicken, Inc",
+  val chicken = Company(7, "Chicken, Inc", false,
                         Action("Cluck", "po-cluck") :: Action("Walk", "Flappity flap") :: Nil)
 
   val data: List[JValue] =
