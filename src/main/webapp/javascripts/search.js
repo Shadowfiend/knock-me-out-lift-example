@@ -1,5 +1,31 @@
 (function() {
-  var searchResults = ko.observableArray();
+  var searchResults = ko.observableArray(),
+      perPage = 3,
+      needsPagination = ko.computed(function() {
+        return searchResults().length > 3;
+      }),
+      pages = ko.computed(function() {
+        var pages = [],
+            pageCount = Math.ceil(searchResults().length / 3);
+        for (var i = 0; i < pageCount; ++i) {
+          var page =
+            {
+              number: i + 1,
+              changePage: function() { currentPage(this.number - 1) }
+            };
+          page.isCurrent = ko.computed(function() {
+            return currentPage() == this.number - 1
+          }, page),
+          
+          pages.push(page);
+        }
+
+        return pages;
+      }),
+      currentPage = ko.observable(0),
+      currentPageResults = ko.computed(function() {
+        return searchResults().slice(currentPage() * perPage, currentPage() * perPage + perPage);
+      });
 
   window.kmo = {}
   kmo.showResults = function(results) {
@@ -19,7 +45,10 @@
   }
 
   var bindings = {
-    searchResults: searchResults
+    needsPagination: needsPagination,
+    pages: pages,
+    currentPageResults: currentPageResults,
+    currentPage: currentPage
   }
 
   kmo.bindings = bindings;

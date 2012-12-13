@@ -11,7 +11,21 @@
 
       <button data-lift="Search.runIt" class="btn">Run dat search!</button>
 
-      <ul data-bind="foreach: searchResults">
+      <div class="pagination" data-bind="if: needsPagination">
+        <ul data-bind="foreach: pages">
+          <li data-bind="css: { active: isCurrent() }">
+            <a href="#" data-bind="text: number, click: changePage">1</a>
+          </li>
+          <li class="clearable">
+            <a href="#">2</a>
+          </li>
+          <li class="clearable">
+            <a href="#">3</a>
+          </li>
+        </ul>
+      </div>
+
+      <ul data-bind="foreach: currentPageResults">
         <li class="connection">
           <a href="/companies/15" data-bind="attr: { href: '/companies/' + id }">
             <img src="/images/logos/duck.png" alt="Duck, Inc logo"
